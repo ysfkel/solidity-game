@@ -35,7 +35,9 @@ Players that participate in defeating a boss are able to claim rewards (xp token
 - Deploy to development environment
    ``` 
      hardhat deploy
+   ```
 - Deploy to mumbai testnet 
    ``` 
      hardhat deploy --network mumbai
+   ```
      
