@@ -65,6 +65,12 @@ contract AttackOfTheClones is ERC2771Context, VRFConsumerBaseV2, ConfirmedOwner{
        ERC2771Context(address(forwarder)) 
        ConfirmedOwner(_msgSender())
        VRFConsumerBaseV2(_vrfCoordinator) {
+       require(address(_xpToken) != address(0), "0x0_xptoken");
+       require(address(_rewardNft) != address(0), "0x0_rewardNft");
+       require(_cryptoPunks != address(0), "0x0_cryptoPunks");
+       require(address(forwarder) != address(0), "0x0_forwarder");
+       require(_vrfCoordinator != address(0), "0x0_vrfCoordinator");
+       
         healthPoints = 100;
         maxHealthPoints = 1000;
         regularDamagePoints = 5;
@@ -78,6 +84,9 @@ contract AttackOfTheClones is ERC2771Context, VRFConsumerBaseV2, ConfirmedOwner{
         COORDINATOR = VRFCoordinatorV2Interface(_vrfCoordinator);
     }
 
+    /**
+     * @notice  Used by players to generate new charaters
+     */
     function generateCharacter() external {
         require(characters[_msgSender()].active == false, "Character exists for this address");
         requestRandomWords();

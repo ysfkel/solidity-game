@@ -13,21 +13,23 @@ module.exports = async ({ ethers, getNamedAccounts, deployments }) => {
 
     let cp;
     let vrf;
-    if(chainId === 31337) {
-         cp = await deploy("MockCryptoPunksData", {
+    if(chainId === 31337 || process.env.CRYPTOPUNKS_DATA) {
+        cp = await deploy("MockCryptoPunksData", {
             from: deployer,
             log: true,
             args:[]
         }) 
+    }
 
-         vrf = await deploy("VRFCoordinatorV2Mock", {
+    if(chainId ===31337 || process.env.VRF_COORDINATOR_V2) {
+        vrf = await deploy("VRFCoordinatorV2Mock", {
             from: deployer,
             log: true,
             args:[
                 100000, // base fee
                 100000 // gas price link
             ]
-        })         
+        })     
     } else {
         cp = process.env.CRYPTOPUNKS_DATA;
         vrf = process.env.VRF_COORDINATOR_V2;
