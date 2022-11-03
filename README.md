@@ -28,7 +28,7 @@ Players that participate in defeating a boss are able to claim rewards (xp token
 - invokeBoss:
    Called by owner to load initialze the currentBoss and start the game
 
-# Testing and Depolyments 
+# Testing and Deployments 
  - To run unit tests execute 
    ```
     hardhat test 
