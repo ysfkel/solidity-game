@@ -13,7 +13,7 @@ contract RewardNft is ERC721URIStorage, Ownable {
      using Counters for Counters.Counter;
      Counters.Counter private _tokenIds;
 
-     constructor() ERC721("Chain Battles", "CBTLS") Ownable(){
+     constructor() ERC721("Attack Of the Clones", "ATHC") Ownable(){
 
      }
 

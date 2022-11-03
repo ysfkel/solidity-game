@@ -6,7 +6,8 @@ Players that participate in defeating a boss are able to claim rewards (xp token
 
 # Contracts 
 - AttackOfTheClones This is the game contract
-- 
+- XpToken: ERC20 Reward token
+- RewardNft: ERC721 Reward NFT
 
 # Features (Functions)
 
