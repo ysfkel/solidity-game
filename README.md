@@ -31,6 +31,7 @@ Players that participate in defeating a boss are able to claim rewards (xp token
  - To run unit tests execute 
   ```
     hardhat test 
+  ```
 - Deploy to development environment
    ``` 
      hardhat deploy
